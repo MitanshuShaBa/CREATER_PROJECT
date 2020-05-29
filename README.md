@@ -15,12 +15,10 @@ Requirements:
 
 - [X] Creates conda env for the project
 - [X] Launches the project in Pycharm
+- [X] Remove project option 
+- [ ] Names with spaces to be adjusted
 - [ ] Set the conda env as the project's interpreter in PyCharm
-- [ ] Add remove project option 
 
-'''
-RD /S /Q pypy
-'''
 
 Requirements: 
 - Conda
