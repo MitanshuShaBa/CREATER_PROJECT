@@ -11,29 +11,27 @@ software = sys.argv[1]
 repo_name = sys.argv[2]
 
 print("Creating project...")
-softwares=["py","python"]
-
+softwares = ["py", "python"]
 
 # Github auth and creation of repo
 g = Github(login_or_token=os.getenv("GITHUB_REPO_TOKEN"))
 user = g.get_user()
 login = user.login
 repos = [repo.name for repo in user.get_repos()]
-created_repo=False
+created_repo = False
 
 if repo_name not in repos:
     user.create_repo(repo_name)
-    created_repo=True
-    
+    created_repo = True
 
-if(login and created_repo):
+if (login and created_repo):
     # Create directory according to the software
     custom_path(software, repo_name)
-    
+
     # Create README
     with open("README.md", "w") as f:
         f.write(f"# {repo_name}")
-    
+
     # Git commands
     commands = ['git init',
                 f'git remote add origin https://github.com/{login}/{repo_name}.git',
@@ -44,7 +42,7 @@ if(login and created_repo):
         os.system(command)
 
     # Add software requirements
-    customise(software,repo_name)
+    customise(software, repo_name)
 
 else:
     print("\n\nName was taken")
