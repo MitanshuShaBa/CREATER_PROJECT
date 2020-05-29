@@ -24,7 +24,7 @@ if repo_name not in repos:
     user.create_repo(repo_name)
     created_repo = True
 
-if (login and created_repo):
+if login and created_repo:
     # Create directory according to the software
     custom_path(software, repo_name)
 

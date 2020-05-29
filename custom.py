@@ -13,7 +13,7 @@ def custom_path(software, repo_name):
 
 def customise(software, repo_name):
     if software == "python" or software == "py":
-        os.system(f"conda create -n {repo_name} python=3.6")
+        os.system(f"conda create -n {repo_name} python=3.6 --yes")
         os.system("pycharm64.exe .")
     else:
         os.system("code .")
