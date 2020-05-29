@@ -8,7 +8,7 @@ if len(sys.argv) != 3:
     print("Enter the software and project name")
     exit(1)
 software = sys.argv[1]
-repo_name = sys.argv[2]
+repo_name = sys.argv[2]  # TODO make repo name work with space in the name
 
 print("Creating project...")
 softwares = ["py", "python"]
